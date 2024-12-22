@@ -1,0 +1,81 @@
+:root {
+    --monokai-background: #1a1e1a;
+    --monokai-comments: #a9a9a9;
+    --monokai-white: #d6d6d6;
+    --monokai-yellow: #e5b567;
+    --monokai-green: #b4d273;
+    --monokai-orange: #e87d3e;
+    --monokai-purple: #9e86c8;
+    --monokai-pink: #b05279;
+    --monokai-blue: #6c99bb;
+}
+
+body {
+    background: var(--monokai-background);
+}
+
+#hnmain {
+    background: var(--monokai-background);
+}
+
+td[bgcolor="#ff6600"] {
+    background: var(--monokai-green);
+}
+
+.athing {
+    line-height: 1.6rem;
+}
+
+/* Text for every post in the main feed */
+.title {
+    font-size: 0.9rem;
+}
+
+.titleline > a, span, .comhead {
+    color: var(--monokai-white);
+}
+
+.rank {
+    color: var(--monokai-comments);
+    vertical-align: middle;
+}
+
+.subtext {
+    color: var(--monokai-green);
+    font-size: 0.8rem;
+
+    a:link, a:visited, span {
+        color: var(--monokai-green);
+    }
+}
+
+/* Comment section */
+.comment > div {
+    color: var(--monokai-white);
+    font-size: 0.9rem;
+}
+
+.comhead a:link {
+    color: var(--monokai-green);
+}
+
+.c00 a:link {
+    color: var(--monokai-blue);
+}
+
+.yclinks > a {
+    color: var(--monokai-white);
+}
+
+/* Hide everything related with accounts or points */
+td[style*="text-align:right"] {
+    display: none;
+}
+
+.votearrow, .reply {
+    display: none;
+}
+
+.fatitem tr:last-child {
+    display: none;
+}
