@@ -1,12 +1,16 @@
-dark-news.izquiratops.dev {
-    reverse_proxy https://news.ycombinator.com {
-        transform body {
-            match `<link rel="stylesheet" type="text/css" href="news.css\?.*">`
-            replace `<link rel="stylesheet" href="/dark-hacker-news/news.css">`
-        }
+news.izquiratops.dev {
+    @css {
+        path_regexp css ^/news\.css(\?.*)?$
+    }
+	
+    handle @css {
+        root * /var/www/html/news.izquiratops.dev
+        file_server
     }
 
-    handle /styles/* {
-        file_server
+    handle {
+        reverse_proxy https://news.ycombinator.com {
+			header_up Host news.ycombinator.com
+		}
     }
 }
